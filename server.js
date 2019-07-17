@@ -19,6 +19,12 @@ const getAd = (type = '') => {
   }
 }
 
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 //api endpoint
 app.get('/ads', (req, res) => {
   /**
